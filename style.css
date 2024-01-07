@@ -40,11 +40,9 @@
 
   @media (max-width: 750px) {
     .info-choosen-card {
-      background-color: blueviolet !important;
       flex-direction: column;
     }
     .choosen-card-img {
-      background-color: chocolate;
       height: 500px;
       align-items: center;
       justify-content: center;
