@@ -10,17 +10,7 @@
 }
 
 
-
-
-
-
-
-
 @media (max-width: 1025px) {
-  .div-img-container{
-    height: 75vw !important;
-  }
-
     .search-section {
       height: max-content;
       flex-direction: column;
@@ -49,10 +39,6 @@
     }
 
     @media (max-width: 625px) {
-      .div-img-container{
-        height: 55vw !important;
-      }
-
       .filter-type-order {
         flex-direction: column;
       }
@@ -63,10 +49,6 @@
     }  
 
     @media (max-width: 420px) {
-      .div-img-container{
-        height: 75vw !important;
-      }
-
       .grid-cols-5 {
         grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
       }
