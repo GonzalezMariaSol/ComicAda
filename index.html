@@ -21,7 +21,7 @@
 <body>
     <header class="header h-[36vw] flex flex-col">
         <div class="div-tittle-container bg-black h-14 flex items-center justify-center">
-            <p class="tittle bg-red-600	font-['Bangers'] text-4xl max-w-min p-1 "> ComicAda </p>
+            <button class="tittle bg-red-600	font-['Bangers'] text-4xl max-w-min p-1 "> ComicAda </button>
         </div>
         <div class="div-img-container flex-1 bg-cover bg-center"
             style="background-image: url('img/superhero-wallpaper.JPG');">
@@ -60,9 +60,11 @@
                 </div>
             </div>
         </section>
-        <section class="results-section m-14">
+
+        <!-- SECCION DE RESULTADOS DE BUSQUEDA -->
+        <section class="results-section m-14 hidden">
             <p class="text-2xl font-bold mb-4">Resultados</p>
-            <p class="text-sm font-bold text-gray-500">X RESULTADOS</p>
+            <p class="text-sm font-semibold text-gray-500">X RESULTADOS</p>
             <!-- NECESITO HACER CON JS QUE ME MUESTRE LA CANTIDAD DE RESULTADOS QUE TIENE LA API CARGADA -->
             <div class="grid grid-cols-5 gap-4">
                 <!-- Fila 1 -->
@@ -219,28 +221,100 @@
 
                 <div class="div-cards p-4 ">
                     <div class="div-img-cover-magazine ">
-                        <img src="img/tapa de revista.jpg">
+                        <img src="img/tapa de revista.jpg" alt="">
                     </div>
                     <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
                 </div>
             </div>
-            <div class="pages-control m-8 flex items-center justify-center">
-                <div class="btns-controls w-min	flex justify-between">
-                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-first"><i
-                            class="fa-solid fa-angles-left"></i></button>
-                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-backward"><i
-                            class="fa-solid fa-angle-left"></i></button>
-                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-forward"><i
-                            class="fa-solid fa-angle-right"></i></button>
-                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-last"><i
-                            class="fa-solid fa-angles-right"></i></button>
+        </section>
+
+        <!-- SECCION DE TARJETA SELECCIONADA C/INFO -->
+        <section class="section-choosen-card">
+            <div class="info-choosen-card h-min w-fit m-16 flex">
+                <aside class="choosen-card-img">
+                    <img class="chosen-magazine-img" src="img/tapaDeRevistaSeleccionada.jpg" alt="">
+                </aside>
+                <div class="div-details-card-info ml-16 w-full">
+                    <p class="text-2xl font-bold mb-12">SOY EL NOMBRE DEL COMIK QUE TIENE Q SER LARGO ASI VEO COMO FUNCIONA LA COZA</p>
+                    <p class="text-2xl font-semibold mb-2">Published</p>
+                    <p class="mb-8">fecha de publicacion</p>
+                    <p class="text-2xl font-semibold mb-2">Screenwriter</p>
+                    <p class="mb-8">Christopher Cantwell</p>
+                    <p class="text-2xl font-semibold mb-2">Description</p>
+                    <p class="mb-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid magni voluptatem, fugit eaque eum illum aperiam soluta quibusdam nesciunt iusto itaque saepe natus adipisci. Aut corporis doloremque voluptate alias totam.</p>
                 </div>
             </div>
+            <div class="characters-involved m-16 mt-32	bg-red-600 ">
+                <p class="text-2xl font-bold mb-4">Characters</p>
+                <p class="text-sm font-semibold text-gray-500">X results</p>
+                <div class="grid grid-cols-6 gap-4 mt-6">
+                    <div class="bg-red-600 character-card ">
+                        <div class="img-character-card">
+                            <img src="img/tapa de revista.jpg">
+                        </div>
+                        <p class="bg-black text-white mt-1 p-1 h-[20vh] ">nombre </p>
+                    </div>
+                    <div class="bg-red-600 character-card">
+                        <div class="img-character-card">
+                            <img src="img/tapa de revista.jpg">
+                        </div>
+                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del persosdfsdfsdfsdfsnaje</p>
+                    </div>
+                    <div class="bg-red-600 character-card">
+                        <div class="img-character-card">
+                            <img src="img/tapa de revista.jpg">
+                        </div>
+                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                    </div>
+                    <div class="bg-red-600 character-card">
+                        <div class="img-character-card">
+                            <img src="img/tapa de revista.jpg">
+                        </div>
+                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                    </div>
+                    <div class="bg-red-600 character-card">
+                        <div class="img-character-card">
+                            <img src="img/tapa de revista.jpg">
+                        </div>
+                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                    </div>
+                    <div class="bg-red-600 character-card">
+                        <div class="img-character-card">
+                            <img src="img/tapa de revista.jpg">
+                        </div>
+                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                    </div>
+                    <div class="bg-red-600 character-card">
+                        <div class="img-character-card">
+                            <img src="img/tapa de revista.jpg">
+                        </div>
+                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
+
+        <!-- CONTROLES PARA IR A LA PAGINA PREVIA O SIGUIENTE -->
+        <div class="pages-control m-8 flex items-center justify-center">
+            <div class="btns-controls w-min	flex justify-between">
+                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-first"><i
+                        class="fa-solid fa-angles-left"></i></button>
+                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-backward"><i
+                        class="fa-solid fa-angle-left"></i></button>
+                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-forward"><i
+                        class="fa-solid fa-angle-right"></i></button>
+                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-last"><i
+                        class="fa-solid fa-angles-right"></i></button>
+            </div>
+        </div>
+
+        <!-- PIE DE PAGINA CON LINK AL REPOSITORIO -->
         <footer class="bg-black flex items-center justify-center h-max p-4">
             <div class="w-max flex flex-col items-center justify-center">
                 <p class="text-white mb-4">Hecho con ❤️ por Maria Sol Gonzalez</p>
-                <a href="https://github.com/GonzalezMariaSol" target="_blank"><i class="fa-brands fa-github text-white text-3xl"></i></a>
+                <a href="https://github.com/GonzalezMariaSol" target="_blank"><i
+                        class="fa-brands fa-github text-white text-3xl"></i></a>
             </div>
         </footer>
 
