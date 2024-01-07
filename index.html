@@ -28,40 +28,222 @@
         </div>
     </header>
     <main>
-        <section class="search-section flex">
-            <div class="search mt-16 ml-12 w-max">
+        <section class="search-section m-10 mt-16 flex justify-around">
+            <div class="search-container ">
                 <p class="text-2xl font-bold mb-4">Search</p>
-                <div class="search relative border-black border-b-4 w-max">
-                    <input type="text" class="search-input w-[45vw] pl-10 pr-2 h-12 flex items-center text-2xl" placeholder="Enter your search">
+                <div class="search relative border-black border-b-4 ">
+                    <input type="text"
+                        class="search-input text-2xl bg-transparent w-[45vw] pl-10 pr-2 h-12 flex items-center text-2xl"
+                        placeholder="Enter your search">
                     <i class="fa-brands fa-searchengin text-2xl absolute left-2 top-1/2 transform -translate-y-1/2"></i>
                 </div>
             </div>
-            <div class="filters-search w-max ml-8 h-max	mt-[21vh] flex items-center">
-                <!-- <div class="filter-type-order flex items-center"> -->
-                    <div class="filter-type">
-                    <label class="mr-6 font-semibold text-neutral-500">TIPO</label>
-                    <select class="mr-12 w-24 h-10 bg-transparent">
-                        <option class="font-semibold">Comic</option>
-                        <option class="font-semibold">Characters</option>
-                    </select>
+            <div class="filters-search flex items-center justify-center">
+                <div class="filter-type-order max-w-full overflow-x-auto flex items-center">
+                    <div class="filter-type max-w-full flex items-center">
+                        <label class="mr-6 font-semibold text-neutral-500">TIPO</label>
+                        <select class="mr-12 w-24 h-10 bg-transparent">
+                            <option class="font-semibold">Comic</option>
+                            <option class="font-semibold">Characters</option>
+                        </select>
                     </div>
-                    <div class="filter-order">
-                    <label class="mr-6 font-semibold text-neutral-500">ORDER</label>
-                    <select class="mr-12 w-20 h-10 bg-transparent">
-                        <option class="font-semibold">A-Z</option>
-                        <option class="font-semibold">Z-A</option>
-                        <option class="font-semibold">Newest</option>
-                        <option class="font-semibold">Oldest</option>
-                    </select>
+                    <div class="filter-order max-w-full flex items-center">
+                        <label class="mr-6 font-semibold text-neutral-500">ORDER</label>
+                        <select class="mr-12 w-20 h-10 bg-transparent">
+                            <option class="font-semibold">A-Z</option>
+                            <option class="font-semibold">Z-A</option>
+                            <option class="font-semibold">Newest</option>
+                            <option class="font-semibold">Oldest</option>
+                        </select>
                     </div>
-                <!-- </div> -->
-                <button class="btn-search bg-black text-white text-xl p-2 rounded-lg">Search</button>
+                    <button class="btn-search bg-black text-white text-xl max-w-full p-2 rounded-lg">Search</button>
+                </div>
             </div>
         </section>
-        <section class="results-section">
-p
+        <section class="results-section m-14">
+            <p class="text-2xl font-bold mb-4">Resultados</p>
+            <p class="text-sm font-bold text-gray-500">X RESULTADOS</p>
+            <!-- NECESITO HACER CON JS QUE ME MUESTRE LA CANTIDAD DE RESULTADOS QUE TIENE LA API CARGADA -->
+            <div class="grid grid-cols-5 gap-4">
+                <!-- Fila 1 -->
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+
+
+                <div class="div-cards p-4 ">
+                    <div class="div-img-cover-magazine ">
+                        <img src="img/tapa de revista.jpg">
+                    </div>
+                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
+                </div>
+            </div>
+            <div class="pages-control m-8 flex items-center justify-center">
+                <div class="btns-controls w-min	flex justify-between">
+                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-first"><i
+                            class="fa-solid fa-angles-left"></i></button>
+                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-backward"><i
+                            class="fa-solid fa-angle-left"></i></button>
+                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-forward"><i
+                            class="fa-solid fa-angle-right"></i></button>
+                    <button class="btns bg-black text-white m-3 p-3 rounded-md btn-last"><i
+                            class="fa-solid fa-angles-right"></i></button>
+                </div>
+            </div>
         </section>
-        
+        <footer class="bg-black flex items-center justify-center h-max p-4">
+            <div class="w-max flex flex-col items-center justify-center">
+                <p class="text-white mb-4">Hecho con ❤️ por Maria Sol Gonzalez</p>
+                <a href="https://github.com/GonzalezMariaSol" target="_blank"><i class="fa-brands fa-github text-white text-3xl"></i></a>
+            </div>
+        </footer>
+
     </main>
 </body>
 
