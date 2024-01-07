@@ -1,12 +1,13 @@
-.div-cards:hover {
-  transform: scale(1.05);
-  transition-duration: 300ms; 
-  color: red;
-}
 .div-img-cover-magazine{
   box-shadow: 0px 12px 33px -4px rgba(0,0,0,0.75);
 -webkit-box-shadow: 0px 12px 33px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 12px 33px -4px rgba(0,0,0,0.75);
+}
+
+.div-cards:hover {
+  transform: scale(1.05);
+  transition-duration: 300ms; 
+  color: red;
 }
 
 
