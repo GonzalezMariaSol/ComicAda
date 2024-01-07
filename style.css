@@ -17,6 +17,10 @@
 
 
 @media (max-width: 1025px) {
+  .div-img-container{
+    height: 45vw !important;
+  }
+
     .search-section {
       height: max-content;
       flex-direction: column;
@@ -45,6 +49,10 @@
     }
 
     @media (max-width: 625px) {
+      .div-img-container{
+        height: 35vw !important;
+      }
+
       .filter-type-order {
         flex-direction: column;
       }
