@@ -18,7 +18,7 @@
 
 @media (max-width: 1025px) {
   .div-img-container{
-    height: 45vw !important;
+    height: 75vw !important;
   }
 
     .search-section {
@@ -50,7 +50,7 @@
 
     @media (max-width: 625px) {
       .div-img-container{
-        height: 35vw !important;
+        height: 55vw !important;
       }
 
       .filter-type-order {
@@ -63,6 +63,10 @@
     }  
 
     @media (max-width: 420px) {
+      .div-img-container{
+        height: 75vw !important;
+      }
+
       .grid-cols-5 {
         grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
       }
