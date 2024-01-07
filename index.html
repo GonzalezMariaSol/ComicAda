@@ -21,7 +21,7 @@
 <body>
     <header class="header h-[36vw] flex flex-col">
         <div class="div-tittle-container bg-black h-14 flex items-center justify-center">
-            <button class="tittle bg-red-600	font-['Bangers'] text-4xl max-w-min p-1 "> ComicAda </button>
+            <button class="tittle bg-red-600 font-['Bangers'] text-4xl max-w-min p-1"> ComicAda </button>
         </div>
         <div class="div-img-container flex-1 bg-cover bg-center"
             style="background-image: url('img/superhero-wallpaper.JPG');">
@@ -31,7 +31,7 @@
         <section class="search-section m-10 mt-16 flex justify-around">
             <div class="search-container ">
                 <p class="text-2xl font-bold mb-4">Search</p>
-                <div class="search relative border-black border-b-4 ">
+                <div class="search relative border-black border-b-4">
                     <input type="text"
                         class="search-input text-2xl bg-transparent w-[45vw] pl-10 pr-2 h-12 flex items-center text-2xl"
                         placeholder="Enter your search">
@@ -228,67 +228,95 @@
             </div>
         </section>
 
-        <!-- SECCION DE TARJETA SELECCIONADA C/INFO -->
+        <!-- SECCION DE TARJETA SELECCIONADA C/INFO --- PERSONAJE SELECCIONADO C/INFO-->
         <section class="section-choosen-card">
             <div class="info-choosen-card h-min w-fit m-16 flex">
                 <aside class="choosen-card-img">
                     <img class="chosen-magazine-img" src="img/tapaDeRevistaSeleccionada.jpg" alt="">
                 </aside>
                 <div class="div-details-card-info ml-16 w-full">
-                    <p class="text-2xl font-bold mb-12">SOY EL NOMBRE DEL COMIK QUE TIENE Q SER LARGO ASI VEO COMO FUNCIONA LA COZA</p>
-                    <p class="text-2xl font-semibold mb-2">Published</p>
-                    <p class="mb-8">fecha de publicacion</p>
-                    <p class="text-2xl font-semibold mb-2">Screenwriter</p>
-                    <p class="mb-8">Christopher Cantwell</p>
-                    <p class="text-2xl font-semibold mb-2">Description</p>
-                    <p class="mb-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid magni voluptatem, fugit eaque eum illum aperiam soluta quibusdam nesciunt iusto itaque saepe natus adipisci. Aut corporis doloremque voluptate alias totam.</p>
+                    <p class="name text-2xl font-bold mb-12">SOY EL NOMBRE DEL COMIK QUE TIENE Q SER LARGO ASI VEO COMO
+                        FUNCIONA LA COZA</p>
+
+                    <!-- !VISAGRA -->
+                    <div class="hidden">
+                        <p class="text-2xl font-semibold mb-2">Published</p>
+                        <p class="mb-8">fecha de publicacion</p>
+                        <p class="text-2xl font-semibold mb-2">Screenwriter</p>
+                        <p class="mb-8">Christopher Cantwell</p>
+                    </div>
+
+
+                    <p class="description text-2xl font-semibold mb-2">Description</p>
+                    <p class="mb-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid magni voluptatem,
+                        fugit eaque eum illum aperiam soluta quibusdam nesciunt iusto itaque saepe natus adipisci. Aut
+                        corporis doloremque voluptate alias totam.</p>
                 </div>
             </div>
             <div class="characters-involved m-16 mt-32">
-                <p class="text-2xl font-bold mb-4">Characters</p>
-                <p class="text-sm font-semibold text-gray-500">X results</p>
+                <!-- !VISAGRA -->
+                <p class="text-2xl font-bold mb-4 hidden">Characters</p>
+
+                <p class="text-2xl font-bold mb-4">Comics</p>
+
+                <!-- !VISAGRA -->
+                <p class="caracter-comic-results text-sm font-semibold text-gray-500">X results</p>
                 <div class="grid grid-cols-6 gap-4 mt-6">
-                    <div class="bg-red-600 character-card ">
-                        <div class="img-character-card">
+                    <div class="character-card">
+                        <div class="img-character-card border-b-4 border-red-600">
                             <img src="img/tapa de revista.jpg">
                         </div>
-                        <p class="bg-black text-white mt-1 p-1 h-[20vh] ">nombre </p>
+                        <div class="bg-black flex items-center justify-center h-[18vh]">
+                            <p class="character-name text-white">Capitain america (Sam Wilson)</p>
+                        </div>
                     </div>
-                    <div class="bg-red-600 character-card">
-                        <div class="img-character-card">
+                    <div class="character-card">
+                        <div class="img-character-card border-b-4 border-red-600">
                             <img src="img/tapa de revista.jpg">
                         </div>
-                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del persosdfsdfsdfsdfsnaje</p>
+                        <div class="bg-black flex items-center justify-center h-[18vh]">
+                            <p class="character-name text-white">Capitain america (Sam Wilson)</p>
+                        </div>
                     </div>
-                    <div class="bg-red-600 character-card">
-                        <div class="img-character-card">
+                    <div class="character-card">
+                        <div class="img-character-card border-b-4 border-red-600">
                             <img src="img/tapa de revista.jpg">
                         </div>
-                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                        <div class="bg-black flex items-center justify-center h-[18vh]">
+                            <p class="character-name text-white">Capitain america (Sam Wilson)</p>
+                        </div>
                     </div>
-                    <div class="bg-red-600 character-card">
-                        <div class="img-character-card">
+                    <div class="character-card">
+                        <div class="img-character-card border-b-4 border-red-600">
                             <img src="img/tapa de revista.jpg">
                         </div>
-                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                        <div class="bg-black flex items-center justify-center h-[18vh]">
+                            <p class="character-name text-white">Capitain america (Sam Wilson)</p>
+                        </div>
                     </div>
-                    <div class="bg-red-600 character-card">
-                        <div class="img-character-card">
+                    <div class="character-card">
+                        <div class="img-character-card border-b-4 border-red-600">
                             <img src="img/tapa de revista.jpg">
                         </div>
-                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                        <div class="bg-black flex items-center justify-center h-[18vh]">
+                            <p class="character-name text-white">Capitain america (Sam Wilson)</p>
+                        </div>
                     </div>
-                    <div class="bg-red-600 character-card">
-                        <div class="img-character-card">
+                    <div class="character-card">
+                        <div class="img-character-card border-b-4 border-red-600">
                             <img src="img/tapa de revista.jpg">
                         </div>
-                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                        <div class="bg-black flex items-center justify-center h-[18vh]">
+                            <p class="character-name text-white">Capitain america (Sam Wilson)</p>
+                        </div>
                     </div>
-                    <div class="bg-red-600 character-card">
-                        <div class="img-character-card">
+                    <div class="character-card">
+                        <div class="img-character-card border-b-4 border-red-600">
                             <img src="img/tapa de revista.jpg">
                         </div>
-                        <p class="bg-black text-white mt-1 p-1 h-[20vh]">nombre del personaje</p>
+                        <div class="bg-black flex items-center justify-center h-[18vh]">
+                            <p class="character-name text-white">Capitain america (Sam Wilson)</p>
+                        </div>
                     </div>
                 </div>
 
