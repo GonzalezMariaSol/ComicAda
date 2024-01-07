@@ -12,6 +12,10 @@
 
 
 @media (max-width: 1025px) {
+/* .header{
+  height: ;
+} */
+
     .search-section {
       height: max-content;
       flex-direction: column;
