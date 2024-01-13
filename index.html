@@ -64,16 +64,9 @@
         <!-- SECCION DE RESULTADOS DE BUSQUEDA -->
         <section class="results-section m-14 ">
             <p class="text-2xl font-bold mb-4">Resultados</p>
-            <p class="text-sm font-semibold text-gray-500">X RESULTADOS</p>
-            <!-- NECESITO HACER CON JS QUE ME MUESTRE LA CANTIDAD DE RESULTADOS QUE TIENE LA API CARGADA -->
+            <p class="total-of-comics text-sm font-semibold text-gray-500">0 RESULTADOS</p>
             <div class="results-cards-comics grid grid-cols-5 gap-4">
-                <!-- Fila 1 -->
-                <div class="div-cards p-4 ">
-                    <div class="div-img-cover-magazine ">
-                        <img src="img/tapa de revista.jpg">
-                    </div>
-                    <p class="font-semibold mt-6">TITULO DE REVISTA QUE TIENE QUE HACERCE CON JS</p>
-                </div>
+                <!-- FILLED BY JS -->
             </div>
         </section>
 
@@ -175,13 +168,16 @@
         <!-- CONTROLES PARA IR A LA PAGINA PREVIA O SIGUIENTE -->
         <div class="pages-control m-8 flex items-center justify-center">
             <div class="btns-controls w-min	flex justify-between">
-                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-first"><i
+                <button class="btns-first-page bg-black text-white m-3 p-3 rounded-md btn-first"><i
                         class="fa-solid fa-angles-left"></i></button>
-                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-backward"><i
+                <button class="btns-prev-pag bg-black text-white m-3 p-3 rounded-md btn-backward"><i
                         class="fa-solid fa-angle-left"></i></button>
-                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-forward"><i
+                <div>
+                    <p class="current-page-num font-semibold w-max m-3 p-3"></p>
+                </div>
+                <button class="btns-next-page bg-black text-white m-3 p-3 rounded-md btn-forward"><i
                         class="fa-solid fa-angle-right"></i></button>
-                <button class="btns bg-black text-white m-3 p-3 rounded-md btn-last"><i
+                <button class="btns-last-page bg-black text-white m-3 p-3 rounded-md btn-last"><i
                         class="fa-solid fa-angles-right"></i></button>
             </div>
         </div>
