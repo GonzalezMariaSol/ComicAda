@@ -6,6 +6,7 @@ const just = (selector) => document.querySelector(selector);
 const urlBase = `http://gateway.marvel.com/v1/public/`;
 let ts = `ts=1`;
 const publicKey = "&apikey=d3abb539098557030e53849b9dc73d81";
+const privateKey = "338e6aeedb37d02e56329d2837e6679586d0c53f";
 const hash = "&hash=56d3e07a1a8a5d3e0602e841365c58f5";
 
 
@@ -18,24 +19,18 @@ let totalItems
 
 
 
-
-
-
 //                             desde , hasta
-const getMarvelComics = async (offset, limit, pageNum) => {
-    // let existTitle = title? `&titleStartsWith=${title}` : ""
+const getMarvelComics = async (offset, limit, pageNum, titleSearched, typeChoosen, orderChoosen) => {
     const url = `${urlBase}comics?${ts}&offset=${offset}&limit=${limit}${publicKey}${hash}`; //${existTitle}`
     const response = await fetch(url);
     const data = await response.json();
     totalItems = data.data.total
-    console.log(totalItems)
     return data;
 };
 
 
-
-const printComic = async (offset, limit, pageNum) => {
-  const comics = await getMarvelComics(offset, limit, pageNum);
+const printComic = async (offset, limit, pageNum, titleSearched, typeChoosen, orderChoosen) => {
+  const comics = await getMarvelComics(offset, limit, pageNum, titleSearched, typeChoosen, orderChoosen);
   just(".results-cards-comics").innerHTML = ``;
   just(".total-of-comics").innerText = `${comics.data.total} RESULTADOS`;
   just(".current-page-num").innerText = `page ${pageNum}`
@@ -54,7 +49,18 @@ const printComic = async (offset, limit, pageNum) => {
         `;
   }
 };
-printComic(offsetCounter, limitCounter, pageCounter);
+printComic(offsetCounter, limitCounter, pageCounter,);
+
+
+
+
+
+// FILTERS
+
+
+
+
+
 
 
 //PAGINACION
@@ -64,6 +70,17 @@ just(".btns-first-page").addEventListener("click", ()=> {
     pageCounter = 1
     printComic(offsetCounter, limitCounter, pageCounter); 
 })
+
+
+just(".btns-prev-pag").addEventListener("click", () => {
+    if (offsetCounter >= itemsPerPage) {
+        offsetCounter -= itemsPerPage;
+        limitCounter = Math.min(itemsPerPage, totalItems - offsetCounter);
+        pageCounter -= 1;
+    }
+    printComic(offsetCounter, limitCounter, pageCounter);
+});
+
 
 just(".btns-next-page").addEventListener("click", () => {
     if (offsetCounter + itemsPerPage < totalItems) {
@@ -76,25 +93,13 @@ just(".btns-next-page").addEventListener("click", () => {
 
 
 
-just(".btns-prev-pag").addEventListener("click", () => {
-    if (offsetCounter >= itemsPerPage) {
-        offsetCounter -= itemsPerPage;
-        limitCounter = Math.min(itemsPerPage, totalItems - offsetCounter);
-        pageCounter -= 1;
-        printComic(offsetCounter, limitCounter, pageCounter);
-    }
-});
-
-
 just(".btns-last-page").addEventListener("click", () => {
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-    const startOffset = Math.max(0, (totalPages - 1) * itemsPerPage);
+    pageCounter = Math.ceil(totalItems / itemsPerPage);
+    const startOffset = Math.max(0, (pageCounter - 1) * itemsPerPage);
     const endOffset = totalItems;
     offsetCounter = startOffset;
     limitCounter = endOffset - startOffset;
-
-    printComic(offsetCounter, limitCounter, totalPages);
-});
+    printComic(offsetCounter, limitCounter, pageCounter)});
 
 
 
