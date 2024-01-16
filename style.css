@@ -5,9 +5,12 @@
 }
 
 .div-cards:hover {
+  color: #ff0000 !important;
   transform: scale(1.05);
   transition-duration: 300ms;
-  color: red;
+}
+.characters{
+  color: #ff0000 !important;
 }
 
 @media (max-width: 1025px) {
