@@ -95,7 +95,7 @@ const getMarvelComics = async (typeSelected, nameSearched, orderSelected, offset
 const printAllComicsCharacters = async (typeSelected, nameSearched, orderSelected, offset, limit, pageNum) => {
     const comics = await getMarvelComics(typeSelected, nameSearched, orderSelected, offset, limit, pageNum);
     just(".results-cards-comics-characters").innerHTML = ``;
-    just(".total-of-comics").innerText = `${comics.data.total} RESULTADOS`;
+    just(".total-of-comics").innerText = `${comics.data.total} RESULTS`;
     just(".current-page-num").innerText = `page ${pageNum}`
     for (let comic of comics.data.results) {
         let pathImgComic = comic.thumbnail.path + "/portrait_incredible.jpg";
@@ -108,23 +108,30 @@ const printAllComicsCharacters = async (typeSelected, nameSearched, orderSelecte
             <p class="text-black font-semibold mt-6">${comic.title}</p>
             </div>
             `;
+            clickOnChoosenComic(comics);
         }
         else if (typeSelected === "characters") {
+            console.log(comic.id);
             just(".results-cards-comics-characters").innerHTML += `
-            <div class="div-cards card-characters bg-black text-center m-4 overflow-hidden">
-            <div class="div-img-character overflow-hidden">
+            <div class="div-cards card-characters bg-black text-center m-4 overflow-hidden" id="${comic.id}">
+            <div class="div-img-character border-b-4 border-red-600 overflow-hidden">
             <img src="${pathImgComic}" class="w-full h-full object-contain">
             </div>
+            <div class="bg-black flex items-center justify-center h-[18vh]">
             <p class="text-white font-semibold mt-6">${comic.name}</p>
             </div>
+            </div>
             `
+            clickOnChoosenCharacter(comics)
         }
-        addClickListenerToCards(comics);
-
     }
 };
 
-const addClickListenerToCards = (allComics) => {
+
+
+
+
+const clickOnChoosenComic = (allComics) => {
     all(".card-comics").forEach((card) => {
         card.addEventListener("click", (e) => {
             const clickedCardId = e.target.closest('.card-comics').id;
@@ -132,8 +139,6 @@ const addClickListenerToCards = (allComics) => {
         })
     })
 }
-
-
 
 
 const printComic = async (allComics, clickedId) => {
@@ -178,7 +183,7 @@ const printComic = async (allComics, clickedId) => {
 
                     const characterImg = data.data.results[0].thumbnail.path + "/portrait_incredible.jpg"
 
-                    just(".caracter-comic-results").innerText = `${comic.characters.items.length} Results`
+                    just(".character-comic-results").innerText = `${comic.characters.items.length} Results`
                     just(".characters-in-comic-grid").innerHTML += `
                         <div class="character-card">
                             <div class="img-character-card border-b-4 border-red-600 overflow-hidden">
@@ -190,12 +195,75 @@ const printComic = async (allComics, clickedId) => {
                         </div>
                     `
                 }
-            }else if (comic.characters.items.length === 0) {
-                just(".caracter-comic-results").innerText = `0 Results`
+            } else if (comic.characters.items.length === 0) {
+                just(".character-comic-results").innerText = `0 Results`
                 just(".characters-in-comic-grid").innerHTML = `
                 <p class="text-3xl font-semibold w-max">No se han encontrado resultados</p>
                 `
             }
+        }
+    }
+}
+
+
+const clickOnChoosenCharacter = (allCharacters) => {
+    all(".card-characters").forEach((card) => {
+        card.addEventListener("click", (e) => {
+            const clickedCardId = e.currentTarget.id
+            printCharacters(allCharacters, clickedCardId)
+        })
+    })
+}
+
+const printCharacters = async(allCharacters, clickedId) => {
+    for(const character of allCharacters.data.results){
+        if(character.id === Number(clickedId)){
+            console.log("HOLIS");
+            just(".results-cards-comics-characters").classList.add("hidden")
+            just(".total-of-comics").classList.add("hidden")
+            just(".section-choosen-card").classList.remove("hidden")
+
+            let pathImgCharacter = character.thumbnail.path + "/portrait_incredible.jpg";
+
+            just(".choosen-card-img").innerHTML = `
+            <img class="chosen-magazine-img w-full h-full object-contain" src="${pathImgCharacter}" alt="magazine cover">
+            `
+
+            just(".name").innerText = `${character.name}`
+
+            if(character.description === ""){
+                just(".description").classList.add("hidden")
+            }else{
+            just(".description-text").innerText = `${character.description}`
+            }
+
+            if(character.comics.items.length > 0){
+                for (const comic of character.comics.items){
+                    console.log(comic);
+                    const urlForComics = `${comic.resourceURI}?${ts}${publicKey}&${hash}`
+                    const response = await fetch(urlForComics);
+                    const data = await response.json();
+
+                    const comicsImg = data.data.results[0].thumbnail.path + "/portrait_incredible.jpg"
+
+                    just(".character-comic-results").innerText = `${character.comics.items.length} Results`
+                    just(".characters-in-comic-grid").innerHTML += `
+                        <div class="character-card">
+                            <div class="img-character-card border-b-4 border-red-600 overflow-hidden">
+                                <img src="${comicsImg}" class="w-full h-full object-contain">
+                            </div>
+                            <div class="bg-black flex items-center justify-center h-[18vh]">
+                                <p class="character-name text-white text-center">${comic.name}</p>
+                            </div>
+                        </div>
+                    `
+                } 
+            }else if (comic.characters.items.length === 0) {
+                just(".character-comic-results").innerText = `0 Results`
+                just(".characters-in-comic-grid").innerHTML = `
+                <p class="text-3xl font-semibold w-max">No se han encontrado resultados</p>
+                `
+            }   
         }
     }
 }
@@ -311,8 +379,8 @@ just(".btns-last-page").addEventListener("click", () => {
 
 
 const inicializeApp = () => {
+    just(".tittle").addEventListener("click", () => window.location.reload())
     printAllComicsCharacters("comics", null, "a-z", offsetCounter, limitCounter, pageCounter);
-
 }
 window.addEventListener("load", inicializeApp);
 
